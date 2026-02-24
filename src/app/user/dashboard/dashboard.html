@@ -1,0 +1,31 @@
+<div class="layout">
+  <app-sidebar></app-sidebar>
+
+  <div class="content">
+    <h1>Available Events</h1>
+
+    <!-- Loading -->
+    <div *ngIf="loading">Loading events...</div>
+
+    <!-- No Events -->
+    <div *ngIf="!loading && events.length === 0">
+      No events available.
+    </div>
+
+    <!-- Events Grid -->
+    <div class="event-grid" *ngIf="!loading && events.length > 0">
+      <div class="event-card" *ngFor="let event of events">
+        <h3>{{ event.name }}</h3>
+        <p>Capacity: {{ event.capacity }}</p>
+        <p>Registered: {{ event.registeredCount }}</p>
+        <p>Deadline: {{ event.deadline | date }}</p>
+
+        <button
+          [disabled]="event.registeredCount >= event.capacity"
+          (click)="register(event)">
+          Register
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

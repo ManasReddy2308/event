@@ -1,0 +1,36 @@
+<div class="sidebar">
+  <h2 class="logo">Eventor</h2>
+
+  <nav>
+    <!-- Events -->
+    <a routerLink="/dashboard" routerLinkActive="active">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-width="2" d="M8 7V3m8 4V3M4 11h16M5 21h14a2 2 0 002-2V7H3v12a2 2 0 002 2z" />
+      </svg>
+      Events
+    </a>
+
+    <!-- Registered Events -->
+    <a routerLink="/registered-events" routerLinkActive="active">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-width="2" d="M9 12l2 2 4-4M7 20h10a2 2 0 002-2V6l-6-4-6 4v12a2 2 0 002 2z" />
+      </svg>
+      Registered Events
+    </a>
+
+    <!-- Profile -->
+    <a routerLink="/profile" routerLinkActive="active">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-width="2" d="M5.121 17.804A9 9 0 1118.879 17.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+      Profile
+    </a>
+  </nav>
+
+  <button class="logout-btn" (click)="logout()">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1m0-10V7" />
+    </svg>
+    Logout
+  </button>
+</div>

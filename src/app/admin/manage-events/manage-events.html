@@ -1,0 +1,37 @@
+<div class="layout">
+  <app-admin-sidebar></app-admin-sidebar>
+
+  <div class="content">
+    <h1>Manage Events</h1>
+
+    <!-- Add Event -->
+    <div class="form">
+      <input placeholder="Event Name" [(ngModel)]="newEvent.name" />
+      <input type="number" placeholder="Capacity" [(ngModel)]="newEvent.capacity" />
+      <input type="date" [(ngModel)]="newEvent.deadline" />
+      <button (click)="addEvent()">Add Event</button>
+    </div>
+
+    <!-- Loading -->
+    <div *ngIf="loading">Loading events...</div>
+
+    <!-- Empty -->
+    <div *ngIf="!loading && events.length === 0">
+      No events available.
+    </div>
+
+    <!-- Event List -->
+    <div class="event-grid" *ngIf="!loading && events.length > 0">
+      <div class="event-card" *ngFor="let event of events">
+        <h3>{{ event.name }}</h3>
+        <p><strong>Capacity:</strong> {{ event.capacity }}</p>
+        <p><strong>Registered:</strong> {{ event.registeredCount }}</p>
+        <p><strong>Deadline:</strong> {{ event.deadline | date }}</p>
+
+        <button class="delete-btn" (click)="deleteEvent(event.id)">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

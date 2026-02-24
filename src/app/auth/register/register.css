@@ -1,0 +1,217 @@
+/* Container */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff, #f8fafc);
+  padding: 20px;
+}
+
+/* Card */
+.auth-card {
+  width: 380px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 45px rgba(99, 102, 241, 0.15);
+  animation: fadeInUp 0.7s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 55px rgba(99, 102, 241, 0.2);
+}
+
+/* Heading */
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #1e293b;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #475569;
+  font-weight: 500;
+}
+
+/* Inputs */
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #c7d2fe;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+input:focus {
+  border-color: #6366f1;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* Validation Text */
+small {
+  color: #ef4444;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #a78bfa);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(99, 102, 241, 0.3);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Switch Text */
+.switch {
+  text-align: center;
+  margin-top: 18px;
+  color: #475569;
+  font-size: 14px;
+}
+
+.switch a {
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.switch a:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+/* Floating Glow Background */
+.auth-container::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(99,102,241,0.25), transparent 70%);
+  filter: blur(80px);
+  z-index: -1;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =======================
+   RESPONSIVE DESIGN
+======================= */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .auth-card {
+    width: 90%;
+    padding: 35px 25px;
+  }
+
+  .auth-card h2 {
+    font-size: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .auth-card {
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  input {
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .switch {
+    font-size: 13px;
+  }
+}
+/* Small Home Button (Top Left Corner) */
+.home-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: none;
+  background: #6366f1;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.25);
+}
+
+/* Hover effect */
+.home-btn:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+
+/* Mobile Adjustment */
+@media (max-width: 480px) {
+  .home-btn {
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}

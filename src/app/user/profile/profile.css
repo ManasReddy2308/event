@@ -1,0 +1,36 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+}
+
+.content {
+  flex: 1;
+  padding: 40px;
+}
+
+.profile-card,
+.update-card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(99,102,241,0.15);
+  margin-bottom: 20px;
+}
+
+.update-card input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #c7d2fe;
+  margin-bottom: 12px;
+}
+
+.update-card button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1, #a78bfa);
+  color: white;
+}

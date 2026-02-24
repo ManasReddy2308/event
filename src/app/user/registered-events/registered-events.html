@@ -1,0 +1,20 @@
+<div class="layout">
+  <app-sidebar></app-sidebar>
+
+  <div class="content">
+    <h1>My Registered Events</h1>
+
+    <div *ngIf="loading">Loading events...</div>
+
+    <div *ngIf="!loading && registeredEvents.length === 0">
+      No registered events.
+    </div>
+
+    <div class="event-grid" *ngIf="!loading && registeredEvents.length > 0">
+      <div class="event-card" *ngFor="let event of registeredEvents">
+        <h3>{{ event.name }}</h3>
+        <p><strong>Deadline:</strong> {{ event.deadline | date }}</p>
+      </div>
+    </div>
+  </div>
+</div>

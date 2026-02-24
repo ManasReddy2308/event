@@ -1,0 +1,40 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+}
+
+.content {
+  flex: 1;
+  padding: 40px;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.event-card {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 15px 30px rgba(99,102,241,0.15);
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+}
+
+.tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #6366f1;
+  color: white;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+}

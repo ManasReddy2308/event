@@ -1,0 +1,35 @@
+<div class="layout">
+  <app-sidebar></app-sidebar>
+
+  <div class="content">
+    <h1>My Profile</h1>
+
+    <!-- Loading -->
+    <div *ngIf="loading">Loading profile...</div>
+
+    <!-- Profile Info -->
+    <div class="profile-card" *ngIf="!loading && user">
+      <p><strong>Username:</strong> {{ user.username }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Mobile:</strong> {{ user.mobile }}</p>
+      <p><strong>Role:</strong> {{ user.role }}</p>
+    </div>
+
+    <!-- Update Password -->
+    <div class="update-card">
+      <h3>Update Password</h3>
+
+      <form [formGroup]="passwordForm" (ngSubmit)="updatePassword()">
+        <input
+          type="password"
+          placeholder="New Password"
+          formControlName="newPassword"
+        />
+
+        <button type="submit" [disabled]="passwordForm.invalid">
+          Update Password
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

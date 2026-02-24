@@ -1,0 +1,45 @@
+<div class="layout">
+  <app-admin-sidebar></app-admin-sidebar>
+
+  <div class="content">
+    <h1>Admin Profile</h1>
+
+    <!-- Loading -->
+    <p *ngIf="loading">Loading profile...</p>
+
+    <!-- Admin Info -->
+    <div class="profile-card" *ngIf="!loading && profile">
+      <p><strong>Username:</strong> {{ profile.username }}</p>
+      <p><strong>Email:</strong> {{ profile.email }}</p>
+      <p><strong>Mobile:</strong> {{ profile.mobile }}</p>
+      <p><strong>Role:</strong> {{ profile.role }}</p>
+    </div>
+
+    <!-- Update Password -->
+    <div class="update-card">
+      <h3>Update Password</h3>
+
+      <form [formGroup]="passwordForm" (ngSubmit)="updatePassword()">
+        <div class="form-group">
+          <label>New Password</label>
+          <input type="password" formControlName="password" placeholder="Enter new password" />
+          <small *ngIf="f['password'].touched && f['password'].invalid">
+            Password must be at least 6 characters
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input type="password" formControlName="confirmPassword" placeholder="Confirm new password" />
+          <small *ngIf="passwordForm.errors?.['mismatch'] && f['confirmPassword'].touched">
+            Passwords do not match
+          </small>
+        </div>
+
+        <button type="submit" [disabled]="passwordForm.invalid">
+          Update Password
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

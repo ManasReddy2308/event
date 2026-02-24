@@ -1,0 +1,58 @@
+.sidebar {
+  width: 230px;
+  height: 100vh;
+  background: linear-gradient(180deg, #6366f1, #818cf8);
+  padding: 25px 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: slideIn 0.5s ease;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+nav a:hover,
+nav a.active {
+  background: rgba(255,255,255,0.2);
+}
+
+.logout-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: white;
+  color: #4f46e5;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-60px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
